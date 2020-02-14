@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     # 127.0.0.1:8000 --> local
@@ -16,4 +18,4 @@ urlpatterns = [
     #127.0.0.1:8000/post/2/edit --> local
     # mydjangosite.com/post/2/edit --> online
     path('post/<int:pk>/edit', views.post_edit, name='post_edit'),
-]
+] 

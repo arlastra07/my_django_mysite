@@ -9,8 +9,10 @@
               </div>
           {% endif %}
 
-          <a href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-edit fa-2x"></i></a>
-          
+          {% if user.is_authenticated %}
+              <!--adding icon for edit post takes you to post_edit-->
+              <a href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-edit fa-2x"></i></a>
+          {% endif %}
 
           <h1>{{ post.title }}</h1>
           <p>{{ post.text|linebreaksbr }}</p>
