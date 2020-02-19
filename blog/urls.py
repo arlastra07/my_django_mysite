@@ -20,7 +20,7 @@ urlpatterns = [
 
     #127.0.0.1:8000/post/2/edit --> local
     # mydjangosite.com/post/2/edit --> online
-    path('post/<int:pk>/edit', views.post_edit, name='post_edit'),
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 
     #127.0.0.1:8000/drafts --> local
     # mydjangosite.com/drafts --> online
@@ -28,10 +28,14 @@ urlpatterns = [
 
     #127.0.0.1:8000/post/2/publish --> local
     # mydjangosite.com/post/2/publish --> online
-    path('post/<int:pk>/publish', views.post_publish, name='post_publish'),
+    path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
 
     #127.0.0.1:8000/post/2/comment --> local
     # mydjangosite.com/post/2/comment --> online
-    path('post/<int:pk>/comment', views.add_comment_to_post, name='add_comment_to_post'),
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 
-] 
+    #127.0.0.1:8000/post/2/remove --> local
+    # mydjangosite.com/post/2/remove --> online
+    path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
+
+]

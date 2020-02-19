@@ -74,3 +74,8 @@ def add_comment_to_post(request, pk):
         form = CommentForm()
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/add_comment_to_post.html', stuff_for_frontend)
+
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post_detail', pk=comment.post.pk)
